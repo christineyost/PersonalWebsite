@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	background-color: #fddbff;
+	min-height: 100%;
+}
+div.header {
+	display: block;
+	height: 300px;
+	background-image: url("./images/header.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+div.menuBar {
+	background-color: #222222;
+	display: block;
+	width: 100%;
+}
+
+div.menuMargin {
+	max-Width: 1195px;
+	margin: auto;
+}
+
+div.menuLogo {
+	display: inline-block;
+	color: white;
+	font-family: 'Cedarville Cursive';
+	font-size: 24px;
+}
+/*
+img.lotus {
+	margin-left: 10px;
+	padding-bottom: 5px;
+	width: 70px;
+	height: 40px;
+	vertical-align: middle;
+}
+*/
+div.menu {
+	display: block;
+	float: right;
+    text-align: right;
+}
+
+ul.menuItems {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	display: inline-block;
+}
+
+li {
+	float: right;
+}
+
+li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+	font-size: 80%;
+	font-family: 'Lato';
+}
+
+li a:hover {
+	color: #bbbbbb;
+}
+		
+div.main {
+	display: block;
+	max-width: 1040px;
+	background-color: #ffffff;
+	margin: 0px auto 0px auto;
+	box-shadow: 0px 20px 50px #bbbbbb;
+	padding: 75px 75px 75px 75px;
+}
+
+p {
+	color: black;
+	font-family: 'Lato';
+	margin: 0px;
+}
+
+h3 {
+	font-family: 'Lato';
+}
+
+a {
+    color: #7E6D7F;
+    text-decoration: none;
+	font-family: 'Lato';
+}
+a:hover {
+	color: #CAAFCC;
+}

@@ -1,0 +1,22 @@
+#picAndInfo {
+	display: block;
+	margin: auto;
+	width: 100%;
+	overflow: hidden;
+}
+
+#headShot {
+	display: inline;
+	height: 216.25px;
+	width: 216.25px;
+	float: right;
+	border-radius: 50%;
+	margin-left: 40px;
+	/* h: 1012 w: 1141 */
+}
+
+img.socialMediaIcon {
+	height: 40px;
+	width: 40px;
+	padding-right: 10px;
+}
