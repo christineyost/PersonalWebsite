@@ -1,9 +1,4 @@
-h2 {
-	font-family: 'Lato';
-	margin: 0px 0px 25px 0px;
-}
-
-table.weekly {
+#weeklySchedule {
 	margin-bottom: 50px;
 }
 
@@ -12,12 +7,13 @@ td.weekly {
 	padding-right: 75px;
 }
 
-#workshopsHeader {
+#workshops {
 	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
-table.workshops {
-	margin-bottom: 50px;
+#pastWorkshops {
+	margin-top: 50px;
 }
 
 h3.workshopTitle {
@@ -37,16 +33,4 @@ img.workshopPicture {
 	height: 165px;
 	width: 165px;
 	margin-left: 30px;
-}
-
-img.schedule {
-	height: 300px;
-	width: 300px;
-	margin: 50px 66px 0px 0px;
-}
-
-#lastSchedule {
-	height: 300px;
-	width: 300px;
-	margin: 50px 0px 0px 0px;
 }
