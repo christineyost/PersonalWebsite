@@ -16,6 +16,10 @@ td.weekly {
 	margin-top: 50px;
 }
 
+td.workshopRowWithPadding {
+	padding-bottom: 20px;
+}
+
 h3.workshopTitle {
 	margin: 0px 0px 5px 0px;
 }
@@ -25,8 +29,18 @@ p.workshopDateTime {
 	margin: 0px 0px 5px 0px;
 }
 
+p.workshopDate {
+	font-size: 90%;
+	margin: 0px 0px 2px 0px;
+}
+
+p.workshopLocation {
+	font-size: 90%;
+	margin: 0px 0px 5px 0px;
+}
+
 p.workshopDescription {
-	margin-bottom: 5px;
+	margin: 0px 0px 15px 0px;
 }
 
 img.workshopPicture {

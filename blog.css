@@ -1,0 +1,26 @@
+h1 {
+	font-family: 'Lato';
+}
+
+#title {
+	margin-bottom: 50px;
+}
+
+#images {
+	margin-top: 50px;
+}
+
+img.circleImage {
+	height: 300px;
+	width: 300px;
+/*	margin: 50px 66px 0px 0px; */
+	margin-right: 66px;
+	border-radius: 50%;
+}
+
+#circleImageRight {
+	height: 300px;
+	width: 300px;
+/*	margin-top: 50px; */
+	border-radius: 50%;
+}
