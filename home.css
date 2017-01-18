@@ -13,23 +13,22 @@
 	float: right;
 	border-radius: 50%;
 	margin-left: 40px;
-	/* h: 1012 w: 1141 */
 }
 
-img.socialMediaIcon {
+img.contactImage {
 	height: 40px;
 	width: 40px;
 	padding-right: 10px;
 }
 
-img.schedule {
+img.circleImage {
 	height: 300px;
 	width: 300px;
 	margin: 50px 66px 0px 0px;
 	border-radius: 50%;
 }
 
-#lastSchedule {
+#circleImageRight {
 	height: 300px;
 	width: 300px;
 	margin-top: 50px;

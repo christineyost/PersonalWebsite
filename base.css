@@ -109,3 +109,49 @@ a {
 a:hover {
 	color: #CAAFCC;
 }
+
+div.footer {
+	background-color: #dddddd;
+	display: block;
+	width: 100%;
+	height: 51px;
+}
+
+div.footerMargin {
+	max-Width: 1195px;
+	margin: auto;
+}
+
+div.copyright {
+	display: inline-block; 
+	margin-left: 10px;
+}
+
+div.links {
+	display: block;
+	float: right;
+    text-align: right;
+	margin-right: 5px;
+}
+
+p.copyrightText {
+	display: inline-block;
+	color: black;
+	font-family: 'Lato';
+	font-size: 12px;
+	margin-top: 18px;
+}
+
+p.divider {
+	display: inline-block;
+	color: black;
+	font-family: 'Lato';
+	font-size: 12px;
+	margin: 18px 5px 0px 5px;
+}
+
+img.contactImageSmall {
+	height: 35px;
+	width: 35px;
+	margin: 8px 5px 0px 0px;
+}
