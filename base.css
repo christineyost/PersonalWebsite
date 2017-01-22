@@ -58,16 +58,15 @@ ul.menuItems {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+/*    overflow: hidden; */
 	display: inline-block;
-/*	background-color: #222222;*/
 }
 
-li {
+ul.menuItems li {
 	float: left;
 }
 
-li a {
+ul.menuItems li.nonIcon a {
     display: block;
     color: #ffffff;
     text-align: center;
@@ -85,45 +84,67 @@ ul.menuItems li.icon {
 	display: none;
 }
 
-ul.menuItems li.empty {
+#verticalMenu {
+	background-color: #222222;
 	display: none;
+	position: absolute;
+	top: 46px;
+	right: 0px;
+	padding: 0px;
+}
+
+#verticalMenu li {
+	display: block;
+}
+
+#verticalMenu li a {
+	color: #ffffff;
+    text-align: right;
+    padding: 20px;
+    text-decoration: none;
+	font-size: 150%;
+	font-family: 'Lato';
 }
 
 /* When the screen is less than 680 pixels wide, hide all list items and show the list item that contains the link to open and close the topnav (li.icon) */
 @media screen and (max-width:680px) {
-  ul.menuItems li {display: none;}
-  ul.menuItems li.icon {
-    float: right;
-    display: block;
-	color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-	font-size: 80%;
-	font-family: 'Lato';
-  }
+	ul.menuItems li.nonIcon a {
+		display: none;
+		color: #ffffff;
+		font-size: 100%;
+		padding: 20px;
+	}
+	
+	ul.menuItems li.icon {
+		display: block;
+		float: right;
+	}
+	
+	ul.menuItems li.icon a {
+		color: #ffffff;
+		text-align: center;
+		text-decoration: none;
+		font-size: 150%;
+		font-family: 'Lato';
+		padding: 7px 20px 7px 20px;
+	}
+	
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
 @media screen and (max-width:680px) {
-	ul.menuItems.responsive {
+	ul.menuItems {
 		position: relative;
 	}
 	
-	ul.menuItems.responsive li.icon {
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-	
-	ul.menuItems.responsive li {
+	ul.menuItems li {
 		float: none;
 		display: inline;
 	}
 	
-	ul.menuItems.responsive li a {
+	ul.menuItems li a {
 		display: block;
 		text-align: left;
-		background-color: #222222;
 		width: 100%;
 	}
 }

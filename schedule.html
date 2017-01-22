@@ -8,11 +8,13 @@
 		<base target="_blank"></base>
 		<script type="text/javascript">
 			function showMenu() {
-				var x = document.getElementById("menu");
-				if (x.className === "menuItems") {
-					x.className += " responsive";
+				var verticalMenu = document.getElementById("verticalMenu");
+				var style = window.getComputedStyle(verticalMenu);
+				var display = style.getPropertyValue('display');
+				if (display === "none") {
+					verticalMenu.style.display = 'block';
 				} else {
-					x.className = "menuItems";
+					verticalMenu.style.display = 'none';
 				}
 			}
 			
@@ -49,12 +51,17 @@
 					Christine Yost
 				</div>
 				<div class="menu">
-					<ul id="menu" class="menuItems">
-						<li class="icon"><a href="javascript:void(0);" onclick="showMenu()">&#9776;</a></li>
-						<li class="empty"><a href="javascript:void(0);"></a></li>
-						<li><a href="index.html" target="_self">HOME</a></li>
-						<li><a href="schedule.html" target="_self">SCHEDULE</a></li>
-						<li><a href="blog.html" target="_self">BLOG</a></li>
+					<ul class="menuItems">
+						<li class="icon"><a href="javascript:void(0);" onclick="showMenu()">&#9776;</a>
+							<ul id="verticalMenu">
+								<li><a href="index.html" target="_self">HOME</a></li>
+								<li><a href="schedule.html" target="_self">SCHEDULE</a></li>
+								<li><a href="blog.html" target="_self">BLOG</a></li>
+							</ul>
+						</li>
+						<li class="nonIcon"><a href="index.html" target="_self">HOME</a></li>
+						<li class="nonIcon"><a href="schedule.html" target="_self">SCHEDULE</a></li>
+						<li class="nonIcon"><a href="blog.html" target="_self">BLOG</a></li>
 					</ul>
 				</div>
 			</div>
