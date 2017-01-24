@@ -91,6 +91,7 @@ ul.menuItems li.icon {
 	top: 46px;
 	right: 0px;
 	padding: 0px;
+	box-shadow: -5px 5px 8px #cccccc;
 }
 
 #verticalMenu li {
@@ -102,7 +103,7 @@ ul.menuItems li.icon {
     text-align: right;
     padding: 20px;
     text-decoration: none;
-	font-size: 150%;
+	font-size: 120%;
 	font-family: 'Lato';
 }
 
