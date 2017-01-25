@@ -7,22 +7,48 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<base target="_blank"></base>
 		<script type="text/javascript">
-			function showMenu(e) {
+			var iOS = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+			
+			function showMenu() {
 				var verticalMenu = document.getElementById("verticalMenu");
 				var style = window.getComputedStyle(verticalMenu);
 				var display = style.getPropertyValue('display');
 				if (display === 'none') {
-					document.addEventListener("click", closeMenu, false);
+					if (document.body.addEventListener){
+						document.body.addEventListener("click", closeMenu, false);
+						if (iOS){
+							document.body.style.cursor = 'pointer';
+						}
+					}
+					else if (document.body.attachEvent) {
+						document.body.attachEvent("onclick", closeMenu, false);
+					}
 					verticalMenu.style.display = 'block';
 				} else if (display === 'block') {
+					if (document.body.removeEventListener){
+						document.body.removeEventListener("click", closeMenu, false);
+						if (iOS){
+							document.body.style.cursor = 'auto';
+						}
+					}
+					else if (document.body.detachEvent) {
+						document.body.detachEvent("onclick", closeMenu, false);
+					}
 					verticalMenu.style.display = 'none';
-					document.body.removeEventListener('click', closeMenu, false);
 				}
 			}
 			
 			function closeMenu(e){
 				if((e.target.id != 'verticalMenu') && (e.target.id != 'menuIcon')){
-					document.body.removeEventListener('click', closeMenu, false);
+					if (document.body.removeEventListener){
+						document.body.removeEventListener("click", closeMenu, false);
+						if (iOS){
+							document.body.style.cursor = 'auto';
+						}
+					}
+					else if (document.body.detachEvent) {
+						document.body.detachEvent("onclick", closeMenu, false);
+					}
 					verticalMenu.style.display = 'none';
 				}
 			}
@@ -79,6 +105,7 @@
 					<p class="copyrightText">Web design by Christine Yost</p>
 				</div>
 				<div class="links">
+					<a href="https://www.facebook.com/christineyostyoga/"><img class="contactImageSmall" src="./images/facebookContact-small-black.png"></img></a>
 					<a href="https://www.instagram.com/yostiyogi/"><img class="contactImageSmall" src="./images/instagramContact-small-black.png"></img></a>
 					<a href="mailto:christine@christineyost.com"><img class="contactImageSmall" src="./images/mailContact-small-black.png"></img></a>
 				</div>

@@ -249,7 +249,7 @@ div.footer {
 	}
 }
 
-@media only screen and (min-width:507px) {
+@media only screen and (min-width:551px) {
 	div.footer {
 		height: 51px;
 	}
