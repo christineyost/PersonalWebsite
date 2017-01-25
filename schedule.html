@@ -4,8 +4,55 @@
 		<title>Christine Yost</title>
 		<link rel="stylesheet" type="text/css" href="base.css"></link>
 		<link rel="stylesheet" type="text/css" href="schedule.css"></link>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<base target="_blank"></base>
 		<script type="text/javascript">
+			var iOS = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+			
+			function showMenu() {
+				var verticalMenu = document.getElementById("verticalMenu");
+				var style = window.getComputedStyle(verticalMenu);
+				var display = style.getPropertyValue('display');
+				if (display === 'none') {
+					if (document.body.addEventListener){
+						document.body.addEventListener("click", closeMenu, false);
+						if (iOS){
+							document.body.style.cursor = 'pointer';
+						}
+					}
+					else if (document.body.attachEvent) {
+						document.body.attachEvent("onclick", closeMenu, false);
+					}
+					verticalMenu.style.display = 'block';
+				} else if (display === 'block') {
+					if (document.body.removeEventListener){
+						document.body.removeEventListener("click", closeMenu, false);
+						if (iOS){
+							document.body.style.cursor = 'auto';
+						}
+					}
+					else if (document.body.detachEvent) {
+						document.body.detachEvent("onclick", closeMenu, false);
+					}
+					verticalMenu.style.display = 'none';
+				}
+			}
+			
+			function closeMenu(e){
+				if((e.target.id != 'verticalMenu') && (e.target.id != 'menuIcon')){
+					if (document.body.removeEventListener){
+						document.body.removeEventListener("click", closeMenu, false);
+						if (iOS){
+							document.body.style.cursor = 'auto';
+						}
+					}
+					else if (document.body.detachEvent) {
+						document.body.detachEvent("onclick", closeMenu, false);
+					}
+					verticalMenu.style.display = 'none';
+				}
+			}
+			
 			function updateMindBodyLink() {
 				var today = new Date();
 				var dd = today.getDate();
@@ -40,76 +87,98 @@
 				</div>
 				<div class="menu">
 					<ul class="menuItems">
-						<li><a href="blog.html" target="_self">BLOG</a></li>
-						<li><a href="schedule.html" target="_self">SCHEDULE</a></li>
-						<li><a href="index.html" target="_self">HOME</a></li>
+						<li class="icon"><a id="menuIcon" href="javascript:void(0);" onclick="showMenu()">&#9776;</a>
+							<ul id="verticalMenu">
+								<li><a href="index.html" target="_self">HOME</a></li>
+								<li><a href="schedule.html" target="_self">SCHEDULE</a></li>
+								<li><a href="blog.html" target="_self">BLOG</a></li>
+							</ul>
+						</li>
+						<li class="nonIcon"><a href="index.html" target="_self">HOME</a></li>
+						<li class="nonIcon"><a href="schedule.html" target="_self">SCHEDULE</a></li>
+						<li class="nonIcon"><a href="blog.html" target="_self">BLOG</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="main">
-			<div id="weeklySchedule">
-				<h2>Weekly Class Schedule</h3>
-				<table>
-					<tr>
-						<td class="weekly"><strong>Restorative Yin</strong> at Lighthouse Yoga, Wednesdays 7:30 - 8:45pm</td>
-						<td class="weekly"><a id="weeklyLink" href="https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=7&studioid=308978">Sign up here</a></td>
-					</tr>
-				</table>
+			<div class="row">
+				<div class="col-12 col-m-12">
+					<h2>Weekly Class Schedule</h3>
+				</div>
+				<div class="col-9 col-m-9">
+					<p><strong>Restorative Yin</strong> at Lighthouse Yoga, Wednesdays 7:30 - 8:45pm</p>
+				</div>
+				<div class="col-3 col-m-3">
+					<a id="weeklyLink" href="https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=7&studioid=308978">Sign up here</a>
+				</div>
 			</div>
 			<hr>
-			<div id="workshops">
-				<h2>Upcoming Workshops</h2>
-				<table>
-					<tr>
-						<td>
-							<h3 class="workshopTitle">The Foundation to Fly</h3>
-							<p class="workshopDateTime"><strong>Friday January 20<sup>th</sup> 7:00pm-8:30pm at Lighthouse Yoga</strong></p>
-							<p class="workshopDescription">
-								Ready to take flight? Join me to learn the foundations of arm balance poses. In this workshop we'll explore crow, side crow, and eka pada koundinyasana. 
-								We'll work on asanas to strengthen arm balances as well as the poses themselves. All levels welcome!
-							</p>
-							<a href="https://clients.mindbodyonline.com/classic/ws?studioid=308978&amp;stype=-8&amp;sView=day&amp;sLoc=0&amp;date=01/20/17">Sign up here</a>
-						</td>
-						<td>
-							<img class="workshopPicture" src="./scheduleImages/foundationToFly.jpg"></img>
-						</td>
-					</tr>
-				</table>
+			<div class="row">
+				<div class="col-12">
+					<h2>Upcoming Workshops</h2>
+				</div>
+				<div class="col-12">
+					<p>More workshops coming soon!</p>
+				</div>
+<!--
+				<div class="col-9 col-m-7">
+					<h3 class="workshopTitle">The Foundation to Fly</h3>
+					<p class="workshopDateTime"><strong>Friday January 20<sup>th</sup> 7:00pm-8:30pm at Lighthouse Yoga</strong></p>
+					<p class="workshopDescription">
+						Ready to take flight? Join me to learn the foundations of arm balance poses. In this workshop we'll explore crow, side crow, and eka pada koundinyasana. 
+						We'll work on asanas to strengthen arm balances as well as the poses themselves. All levels welcome!
+					</p>
+					<a href="https://clients.mindbodyonline.com/classic/ws?studioid=308978&amp;stype=-8&amp;sView=day&amp;sLoc=0&amp;date=01/20/17">Sign up here</a>
+				</div>
+				<div class="col-3 col-m-5">
+					<img class="workshopPicture" src="./scheduleImages/foundationToFly.jpg"></img>
+				</div>
+-->
 			</div>
 			<hr>
-			<div id="pastWorkshops">
-				<h2>Past Workshops</h2>
-				<table>
-					<tr>
-						<td class="workshopRowWithPadding">
-							<h3 class="workshopTitle">Advanced Arm Balances</h3>
-							<p class="workshopDate"><strong>Saturday October 1<sup>st</sup> 2016</strong></p>
-							<p class="workshopLocation"><strong>Allison Rissel Training - Williston, ND</strong></p>
-							<p>
-								Join me to learn some advanced arm balances. In this workshop we'll explore eka pada koundinyasana one, eka pada koundinyasana two, eight angle pose, and 
-								grasshopper. We'll learn how techniques in simpler postures can help us move deeper into advanced ones. Arm balance proficiency is not required!
-							</p>
-						</td>
-						<td class="workshopRowWithPadding">
-							<img class="workshopPicture" src="./scheduleImages/willistonWorkshop.png"></img>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h3 class="workshopTitle">Arm Balance Foundations</h3>
-							<p class="workshopDate"><strong>Saturday April 16<sup>th</sup> 2016</strong></p>
-							<p class="workshopLocation"><strong>Mojo Fit Studios - Fargo, ND</strong></p>
-							<p>
-								Ready to take flight? Join me to learn the foundations of arm balance poses. In this workshop we'll explore crow, side crow, and eka pada koundinyasana. 
-								We'll work on exercises to strengthen arm balances as well as the poses themselves. All levels welcome!
-							</p>
-						</td>
-						<td>
-							<img class="workshopPicture" src="./scheduleImages/epk1.jpg"></img>
-						</td>
-					</tr>
-				</table>
+			<div class="row">
+				<div class="col-12 col-m-12">
+					<h2>Past Workshops</h2>
+				</div>
+				<div class="col-9 col-m-7">
+					<h3 class="workshopTitle">The Foundation to Fly</h3>
+					<p class="workshopDate"><strong>Friday January 20<sup>th</sup> 2017</strong></p>
+					<p class="workshopLocation"><strong>Lighthouse Yoga - Omaha, NE</strong></p>
+					<p>
+						Ready to take flight? Join me to learn the foundations of arm balance poses. In this workshop we'll explore crow, side crow, and eka pada koundinyasana. 
+						We'll work on asanas to strengthen arm balances as well as the poses themselves. All levels welcome!
+					</p>
+				</div>
+				<div class="col-3 col-m-5 imageDiv">
+					<img class="workshopPicture" src="./scheduleImages/foundationToFly.jpg"></img>
+				</div>
+				<div class="col-12 col-m-12 dotted-spaced"></div>
+				<div class="col-9 col-m-7">
+					<h3 class="workshopTitle">Advanced Arm Balances</h3>
+					<p class="workshopDate"><strong>Saturday October 1<sup>st</sup> 2016</strong></p>
+					<p class="workshopLocation"><strong>Allison Rissel Training - Williston, ND</strong></p>
+					<p>
+						Join me to learn some advanced arm balances. In this workshop we'll explore eka pada koundinyasana one, eka pada koundinyasana two, eight angle pose, and 
+						grasshopper. We'll learn how techniques in simpler postures can help us move deeper into advanced ones. Arm balance proficiency is not required!
+					</p>
+				</div>
+				<div class="col-3 col-m-5 imageDiv">
+					<img class="workshopPicture" src="./scheduleImages/willistonWorkshop.png"></img>
+				</div>
+				<div class="col-12 col-m-12 dotted-spaced"></div>
+				<div class="col-9 col-m-7">
+					<h3 class="workshopTitle">Arm Balance Foundations</h3>
+					<p class="workshopDate"><strong>Saturday April 16<sup>th</sup> 2016</strong></p>
+					<p class="workshopLocation"><strong>Mojo Fit Studios - Fargo, ND</strong></p>
+					<p>
+						Ready to take flight? Join me to learn the foundations of arm balance poses. In this workshop we'll explore crow, side crow, and eka pada koundinyasana. 
+						We'll work on exercises to strengthen arm balances as well as the poses themselves. All levels welcome!
+					</p>
+				</div>
+				<div class="col-3 col-m-5 imageDiv">
+					<img class="workshopPicture" src="./scheduleImages/epk1.jpg"></img>
+				</div>
 			</div>
 		</div>
 		<div class="footer">
@@ -122,6 +191,7 @@
 					<p class="copyrightText">Web design by Christine Yost</p>
 				</div>
 				<div class="links">
+					<a href="https://www.facebook.com/christineyostyoga/"><img class="contactImageSmall" src="./images/facebookContact-small-black.png"></img></a>
 					<a href="https://www.instagram.com/yostiyogi/"><img class="contactImageSmall" src="./images/instagramContact-small-black.png"></img></a>
 					<a href="mailto:christine@christineyost.com"><img class="contactImageSmall" src="./images/mailContact-small-black.png"></img></a>
 				</div>

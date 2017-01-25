@@ -1,0 +1,29 @@
+div.image {
+	text-align: center;
+}
+
+img.circleImage {
+	height: auto;
+	max-width: 100%;
+	border-radius: 50%;
+}
+
+hr {
+	margin: 50px 0px 50px 0px;
+}
+
+#contactImages {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	#contactImages {
+		display: block;
+	}
+}
+
+img.contactImage {
+	height: auto;
+	max-width: 100%;
+	padding-right: 10px;
+}

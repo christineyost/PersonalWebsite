@@ -1,24 +1,19 @@
-#weeklySchedule {
-	margin-bottom: 50px;
+hr {
+	margin: 50px 0px 50px 0px;
 }
 
-td.weekly {
-	font-family: 'Lato';
-	padding-right: 75px;
+div.dotted-spaced {
+	background-image: linear-gradient(to right, #333 10%, rgba(255, 255, 255, 0) 0%);
+	background-position: top;
+	background-size: 10px 1px;
+	background-repeat: repeat-x;
+	margin-top: 20px;
 }
 
-#workshops {
-	margin-top: 50px;
-	margin-bottom: 50px;
+div.imageDiv {
+	text-align: center;
 }
-
-#pastWorkshops {
-	margin-top: 50px;
-}
-
-td.workshopRowWithPadding {
-	padding-bottom: 20px;
-}
+ 
 
 h3.workshopTitle {
 	margin: 0px 0px 5px 0px;
@@ -44,7 +39,7 @@ p.workshopDescription {
 }
 
 img.workshopPicture {
-	height: 165px;
-	width: 165px;
-	margin-left: 30px;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
 }
